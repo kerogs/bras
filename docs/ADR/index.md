@@ -7,6 +7,11 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 
 ## Liste des versions
 
+### Beta
+- [1.1.33-beta](/ADR/1.1.33-beta)
+
+### Alpha
+- [1.1.32-alpha](/ADR/1.1.32-alpha)
 - [1.1.31-alpha](/ADR/1.1.31-alpha)
 - [1.1.30-alpha](/ADR/1.1.30-alpha)
 - [1.1.29-alpha](/ADR/1.1.29-alpha)
