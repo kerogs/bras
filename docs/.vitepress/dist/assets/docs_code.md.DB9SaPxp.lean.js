@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.Daz2Rf8Q.js";const F=JSON.parse('{"title":"Code","description":"","frontmatter":{},"headers":[],"relativePath":"docs/code.md","filePath":"docs/code.md"}'),h={name:"docs/code.md"},l=n("",3),k=[l];function p(t,E,e,r,d,g){return a(),i("div",null,k)}const c=s(h,[["render",p]]);export{F as __pageData,c as default};
