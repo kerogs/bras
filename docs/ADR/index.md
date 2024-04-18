@@ -29,5 +29,10 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 Les versions antérieur à la ``1.1.8-alpha`` ne sont pas disponible car inutilisable.
 :::
 
+## Admin mode
+- [1.1.3-admin](/ADR/1.1.3-admin)
+- [1.1.2-admin](/ADR/1.1.2-admin)
+- [1.1.1-admin](/ADR/1.1.1-admin)
+
 ## Template
 - [template](/ADR/template)
