@@ -27,7 +27,7 @@ Une fois le chargement terminé, une adresse IP locale avec son port sera affich
 Tous les fichiers de documentation sont rédigés au format Markdown, mais fonctionnent sous VitePress. Vous pouvez donc vous renseigner sur la personnalisation de VitePress.
 
 ## Code arduino
-Tout le code Arduino est situé dans le dossier  ``/public/code/``. Le code principal se trouve dans ``/public/code/main.ino``.
+Tout le code Arduino est situé dans le dossier  ``/public/code/``. Le code principal se trouve dans ``/public/code/main.ino``. Il existe une partie qui s'appelle ``admin.ino`` qui sert à tester l'intégralité du code. La documentation des commandes est disponible dans la section ADR dans la version du code admin choisis. 
 
 ## Modifications
 ***Voici la liste des éléments à ajouter :***
