@@ -1,3 +1,9 @@
 # .ksinf ?
+You can put anything you need for your project or presentation in this folder.
 
-Once the git has been cloned, create an .ignore folder to store the content that needs to be kept locally. It will not be uploaded by git
+For example :
+- images, gifs, videos, ...
+- text files or pieces of code
+- lists, etc.
+
+***not everything in this file must be necessary for the project to function.***
