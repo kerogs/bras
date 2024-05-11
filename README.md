@@ -29,12 +29,17 @@ ou
 ## Modification et lancement de la documentation
 Pour lancer la documentation en local et effectuer des modifications :
 
-- Installez ``NodeJS``
+- Installez ``NodeJS`` via [ce lien](https://nodejs.org/en/download/current)
 - Accédez au dossier ``/docs/``
 - Exécutez la commande suivante pour lancer la documentation en local :
-```bash
+```sh
 npm run docs:dev
 ```
+- Ou le faire en 1 commande
+```sh
+cd .\docs\; npm run docs:dev
+```
+
 
 Une fois le chargement terminé, une adresse IP locale avec son port sera affichée. Ouvrez cette adresse dans un navigateur web pour accéder à la documentation.
 
