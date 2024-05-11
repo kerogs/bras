@@ -57,8 +57,7 @@ export default defineConfig({
       {
         text: 'Mention',
         items: [
-          { text: 'Equipe', link: '/team' },
-          { text: 'license', link: '/license' },
+          { text: 'license', link: '/license' }
         ]
       }
     ],
