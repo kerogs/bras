@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "B.R.A.S",
   description: "Documentation pour le B.R.A.S",
-  base: './',
+  base: '/',
   head: [['link', { rel: 'icon', href: 'https://src.ks-infinite.fr/bras/bras.png' }]],
   themeConfig: {
     logo: 'https://src.ks-infinite.fr/bras/bras.png',
@@ -35,16 +35,13 @@ export default defineConfig({
           { text: 'Introduction', link: '/docs/introduction' },
           { text: 'Installation', link: '/docs/installation'},
           { text: 'Bibliothèque', link: "/docs/bibliotheque"},
-          { text: 'Variable', link: "/docs/variable"},
-          { text: 'code', link: "/docs/code"}
+          { text: 'Variable', link: "/docs/variable"}
         ]
       },
       {
         text: 'Fonctions',
         items: [
-          { text: 'Liste des fonctions', link: '/functions/' },
-          { text: 'configset()', link: '/functions/configset' },
-          { text: 'searchArray()', link: '/functions/searchArray'}
+          { text: 'Liste des fonctions', link: '/functions/' }
         ]
       },
       {
@@ -53,7 +50,8 @@ export default defineConfig({
           { text: 'Liste des composants', link: '/composants/' },
           { text: '4069', link: '/composants/4069' },
           { text: 'HMI', link: '/composants/hmi'},
-          { text: 'Arduino', link: '/composants/arduino'}
+          { text: 'Arduino', link: '/composants/arduino'},
+          { text: 'csn-a2', link: '/composants/csn-a2'},
         ]
       },
       {

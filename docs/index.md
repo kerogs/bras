@@ -17,4 +17,6 @@ hero:
       text: Composants
       link: /composants/
 ---
-![Lycée Condorcet Image](https://lyc-condorcet.monbureaunumerique.fr/ressources-layout.do?ID_RESSOURCE=509&ID_PAGE=87)
+<div align=center>
+  <img src="http://src.ks-infinite.fr/bras/lcs-icon.jpg" alt="icone condorcet">
+</div>

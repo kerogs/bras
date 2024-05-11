@@ -7,6 +7,17 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 2.4-beta
+### Ajout
+- Ajout de toutes la parties concernant l'imprimante
+
+### Modification
+- Modification des schémas
+- Modification de quelque fonctions
+
+### Suppression
+- La page ``/docs/code.md`` à été retiré car inutile.
+
 ## Version 2.3-beta
 
 ### Ajout
