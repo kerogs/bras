@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "B.R.A.S",
   description: "Documentation pour le B.R.A.S",
-  base: './',
+  base: '/',
   head: [['link', { rel: 'icon', href: 'https://src.ks-infinite.fr/bras/bras.png' }]],
   themeConfig: {
     logo: 'https://src.ks-infinite.fr/bras/bras.png',
