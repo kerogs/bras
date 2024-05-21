@@ -1,7 +1,11 @@
 # Liste des variables
+Cette partie ne sert qu'à donner une légère aide pour certaine variable du code.
 
 ## led
 Variable qui permettra d'utiliser une led afin de l'allumer lors d'une transmissions (RX de l'arduino sur le port série 3);
+::: danger N'est plus à jours
+L'installation d'une LED ne fonctionne plus depuis la version BETA du code.
+:::
 
 ### Code
 ```c++
@@ -93,18 +97,26 @@ if (casierActionNumber != 0 && searchArray(tampon, "FermerPopup", 11)) {
 ## casier(1-5)Password
 ### Code
 ```c++
-int casier1Password;
-int casier2Password;
-int casier3Password;
-int casier4Password;
-int casier5Password;
-int casier6Password;
+int casiersPassword[7];
 ```
 
 ### Utilisation
 Permet d'enregister les mots de passe pour chaque casier individuellement. Si la valeur du mot de passe du casier est vide, alors le casier  est inutilisé. Si elle est pleine alors cette dernière est utilisé.
-```c++:line-numbers=1 {1}
-
+```c++:line-numbers=1 {4}
+      // Si casier déjà fermer ?
+      for (int i = 1; i < 7; i++) {
+        if (casierActionNumber == i) {
+          if (casiersPassword[i]) {
+            Serial3.print("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"IC\",\"enable\":false}>ET");
+            Serial.println("[CASIER STATUS : DEJA UTILISER]");
+            casierUtilisation = true;
+          } else {
+            Serial3.print("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"IC\",\"enable\":true}>ET");
+            Serial.println("[CASIER STATUS : PAS UTILISER]");
+          }
+        }
+      }
+    }
 ```
 
 ## casierNumber

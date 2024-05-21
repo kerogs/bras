@@ -23,6 +23,7 @@ float calculFonction(float valeurA, float valeurB){
 - [logsPc()](/functions/logspc) <Badge type="danger" text="< 1.1.24-alpha" />
 - [searchArray()](/functions/searchArray) <Badge type="tip" text="^1.1.28" />
 - [tamponReset()](/functions/tamponReset) <Badge type="tip" text="^1.1.30" />
-- [sendColorHMI()](/functions/sendColorHMI) <Badge type="tip" text="^1.1.31" />
+- [sendColorHMI()](/functions/sendColorHMI) <Badge type="tip" text="^1.1.31"/>
 - [getValue()](/functions/getValue) <Badge type="tip" text="^1.1.31" />
 - [numDigits()](/functions/numDigits) <Badge type="tip" text="^1.1.31" />
+- [imprimante()](/functions/imprimante) <Badge type="tip" text="^1.1.35" />

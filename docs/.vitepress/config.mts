@@ -35,16 +35,13 @@ export default defineConfig({
           { text: 'Introduction', link: '/docs/introduction' },
           { text: 'Installation', link: '/docs/installation'},
           { text: 'Bibliothèque', link: "/docs/bibliotheque"},
-          { text: 'Variable', link: "/docs/variable"},
-          { text: 'code', link: "/docs/code"}
+          { text: 'Variable', link: "/docs/variable"}
         ]
       },
       {
         text: 'Fonctions',
         items: [
-          { text: 'Liste des fonctions', link: '/functions/' },
-          { text: 'configset()', link: '/functions/configset' },
-          { text: 'searchArray()', link: '/functions/searchArray'}
+          { text: 'Liste des fonctions', link: '/functions/' }
         ]
       },
       {
@@ -53,14 +50,14 @@ export default defineConfig({
           { text: 'Liste des composants', link: '/composants/' },
           { text: '4069', link: '/composants/4069' },
           { text: 'HMI', link: '/composants/hmi'},
-          { text: 'Arduino', link: '/composants/arduino'}
+          { text: 'Arduino', link: '/composants/arduino'},
+          { text: 'csn-a2', link: '/composants/csn-a2'},
         ]
       },
       {
         text: 'Mention',
         items: [
-          { text: 'Equipe', link: '/team' },
-          { text: 'license', link: '/license' },
+          { text: 'license', link: '/license' }
         ]
       }
     ],
