@@ -6,15 +6,20 @@
    * @author Lucas W.
    * @author Florian V.
    * @author Jessy K.
-   * @version b1.1.33
+   * @version b1.1.36
    * @date 07/02/2024
    * @copyright Copyright - B.R.A.S, Kerogs Infinite, Lycée Condorcet - Stiring-Wendel
    */
 
-#include <Bonezegei_Search.h>
-Bonezegei_Search search;
+#include "Adafruit_Thermal.h"
+#include "SoftwareSerial.h"
 
 #define led 2
+#define TX_PIN 47
+#define RX_PIN 49
+
+SoftwareSerial printSerial(RX_PIN, TX_PIN);
+Adafruit_Thermal printer(&printSerial);
 
 char tampon[30];
 int tamponPos = 0;
@@ -179,6 +184,8 @@ void loop() {
           // Ouvrir la porte.
           while (digitalRead(BPfdc) != HIGH) {
             rotation_montre();
+            digitalWrite(LedG, HIGH);
+            digitalWrite(LedR, LOW);
           }
         } else {
           Serial.println("[ERREUR : FAUX MDP]");
@@ -189,7 +196,10 @@ void loop() {
         // Fermer la porte
         while (digitalRead(BPfdc2) != HIGH) {
           rotation_inverse();
+          digitalWrite(LedG, LOW);
+          digitalWrite(LedR, HIGH);
         }
+        imprimante(casierActionNumber, PasswordTemp);
 
         // Ouvrir la porte.
         // while (digitalRead(BPfdc) != HIGH) {
@@ -275,6 +285,13 @@ void configset() {
   Serial3.begin(9600);
   Serial.print(".");
 
+  // Imprimante
+  while (!printSerial) Serial.print(".");
+  printSerial.begin(19200);
+  Serial.print(".");
+  printer.begin();
+  Serial.print(".");
+
   // LED
   pinMode(led, OUTPUT);
   Serial.print(".");
@@ -295,6 +312,7 @@ void configset() {
   Serial.print(".");
   pinMode(LedG, OUTPUT);
   Serial.print(".");
+
 
   // Fin chargement (ne pas supprimer)
   delay(500);
@@ -500,7 +518,6 @@ void rotation_montre() {
   delayMicroseconds(2);
   digitalWrite(M1steppin, HIGH);
   delayMicroseconds(750);
-  digitalWrite(LedG, HIGH);
 }
 
 void rotation_inverse() {
@@ -509,5 +526,29 @@ void rotation_inverse() {
   delayMicroseconds(2);
   digitalWrite(M1steppin, HIGH);
   delayMicroseconds(750);
-  digitalWrite(LedG, HIGH);
+}
+
+void imprimante(int codeCasierNumber, int codeCasier) {
+  printer.underlineOn();
+  printer.justify('C');
+  printer.setSize('M');
+  printer.println("-------------------------");
+  printer.println(F("KEROGS INFINITE - BRAS"));
+  printer.println("-------------------------");
+  printer.print(F("Casier Numero "));
+  printer.print(codeCasierNumber);
+  printer.print(F("\n"));
+  printer.setSize('L');
+  printer.boldOn();
+  printer.println(F("CODE"));
+  printer.println(codeCasier);
+  printer.setSize('M');
+  printer.justify('C');
+  printer.println("-------------------");
+  printer.boldOff();
+  printer.print(F("\n"));
+  printer.print(F("\n"));
+  printer.setSize('S');
+  printer.feed(2);
+  printer.setDefault();  // Restore printer to defaults
 }

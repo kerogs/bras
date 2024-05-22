@@ -7,6 +7,11 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 2.5-beta
+### Modification
+- Passage du code dans /public de la version 1.1.33-beta à la 1.1.36-beta
+- Correction du shéma sur la page /composants/, maintenant le bon schéma.
+
 ## Version 2.4-beta
 ### Ajout
 - Ajout de toutes la parties concernant l'imprimante

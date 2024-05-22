@@ -9,7 +9,6 @@ Bienvenue sur la liste des composants utilisé.
 - [Imprimante csn-a2](/composants/csn-a2)
 
 ## Schéma de cablage <Badge type="info" text="easyEDA" />
-![Rendu image](https://src.ks-infinite.fr/bras/Schematic_brashmi_2024-03-13.svg) 
-
+![Rendu image](http://src.ks-infinite.fr/bras/Schematic_bras_2024-05-11.png)
 
 
