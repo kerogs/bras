@@ -35,13 +35,14 @@ export default defineConfig({
           { text: 'Introduction', link: '/docs/introduction' },
           { text: 'Installation', link: '/docs/installation'},
           { text: 'Bibliothèque', link: "/docs/bibliotheque"},
-          { text: 'Variable', link: "/docs/variable"}
         ]
       },
       {
-        text: 'Fonctions',
+        text: 'Programmation',
         items: [
-          { text: 'Liste des fonctions', link: '/functions/' }
+          { text: 'Widget Liste', link: "/docs/widget"},
+          { text: 'Liste des fonctions', link: '/functions/' },
+          { text: 'Liste des Variables', link: "/docs/variable"}
         ]
       },
       {

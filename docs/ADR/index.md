@@ -8,6 +8,7 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 ## Liste des versions
 
 ### Beta
+- [1.1.36-beta-rc2](/ADR/1.1.36-beta-rc2)
 - [1.1.36-beta](/ADR/1.1.36-beta)
 - [1.1.35-beta](/ADR/1.1.35-beta)
 - [1.1.34-beta](/ADR/1.1.34-beta)
