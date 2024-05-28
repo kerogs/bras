@@ -10,9 +10,9 @@ Liste des équipements nécessaire pour le bon fonctionnement.
 - Arduino Mega 2560 [DATASHEET](/composants/arduino)
 - STONE [HMI](/composants/hmi)
 - Porte logique inverseur - [4069](/composants/4069)
+- Régulateur 12v -> 9v - [L7809CV](/composants/L7809CV)
 - Imprimante thermique TTL - [csn-a2](/composants/csn-a2)
 - Shield Arduino - [ASMI1-19](/composants/ASMI1-19)
-
 ## Branchement
 Ceci est le branchement entre les différents composants
 

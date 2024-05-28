@@ -37,7 +37,7 @@ Liste du nom de tous les widgets.
 |Elément|Widget|Etat|Description|
 |-------|------|----|-----------|
 |Popup|popup_admin|Activé|Popup qui sera affiché pour se connecter en tant que admin|
-|Text indicateur|Inserer|Activé|Text d'aide ("Insérer code secret :")|
+|Text indicateur|Inserer|Activé|Text d'aide ("Insérer code secret : ")|
 |Entée MDP|AP|Activé|Bouton pour entrée le mdp administrateur|
 |Fermer popup|FA|Activé|Bouton pour fermer la popup|
 |Confirmer Admin|CA|Désactivé|Bouton pour valider la connexion en tant que administrateur|

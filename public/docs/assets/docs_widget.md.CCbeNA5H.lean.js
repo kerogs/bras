@@ -1,0 +1,1 @@
+import{_ as t,c as d,o as e,a4 as r}from"./chunks/framework.C5rzuSi5.js";const v=JSON.parse('{"title":"Widget","description":"","frontmatter":{},"headers":[],"relativePath":"docs/widget.md","filePath":"docs/widget.md"}'),a={name:"docs/widget.md"},i=r("",14),o=[i];function n(u,c,p,h,s,l){return e(),d("div",null,o)}const f=t(a,[["render",n]]);export{v as __pageData,f as default};
