@@ -1,4 +1,5 @@
 # Arduino
+![Arduino Mega](https://img.shields.io/badge/Arduino%20Mega-%2300878F?style=for-the-badge&logo=arduino&logoColor=fff&logoSize=fff)
 
 La arduino mega 2560 est une carte qui servira de controleur.
 

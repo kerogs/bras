@@ -53,6 +53,7 @@ export default defineConfig({
           { text: 'HMI', link: '/composants/hmi'},
           { text: 'Arduino', link: '/composants/arduino'},
           { text: 'csn-a2', link: '/composants/csn-a2'},
+          { text: 'ASMI1-19', link: '/composants/ASMI1-19'}
         ]
       },
       {
