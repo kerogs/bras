@@ -94,6 +94,20 @@ export default {
 }
 ```
 
+## Utilisation de la documentation.
+Le code embarque avec lui une version selfhosted de la documentation. Pour cela, il vous suffit d'effectuer les commandes suivantes :
+- Accédez au dossier ``/docs/``
+- Exécutez la commande suivante pour build la documentation :
+```sh
+npm run docs:build
+```
+- Ou le faire en 1 commande
+```sh
+cd .\docs\; npm run docs:build
+```
+- Il vous suffit donc maintenant d'héberger en local les fichiers HTML (important pour le chargement du CSS)
+
+
 ## Schéma + Shield
 ![Schéma](./public/proteus/preview2.png)
 ![Shield](./public/proteus/preview1.png)
