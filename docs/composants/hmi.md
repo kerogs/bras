@@ -1,4 +1,5 @@
 # STONE HMI
+![Stone](https://img.shields.io/badge/stone-blue?style=for-the-badge&logo=stone&logoColor=fff)
 
 Le HMI (Human Machine Interface) de la marque STONE permet d'être utilisé comme interface pour l'Arduino.
 
