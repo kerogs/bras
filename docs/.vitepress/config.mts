@@ -35,13 +35,14 @@ export default defineConfig({
           { text: 'Introduction', link: '/docs/introduction' },
           { text: 'Installation', link: '/docs/installation'},
           { text: 'Bibliothèque', link: "/docs/bibliotheque"},
-          { text: 'Variable', link: "/docs/variable"}
         ]
       },
       {
-        text: 'Fonctions',
+        text: 'Programmation',
         items: [
-          { text: 'Liste des fonctions', link: '/functions/' }
+          { text: 'Widget Liste', link: "/docs/widget"},
+          { text: 'Liste des fonctions', link: '/functions/' },
+          { text: 'Liste des Variables', link: "/docs/variable"}
         ]
       },
       {
@@ -52,12 +53,15 @@ export default defineConfig({
           { text: 'HMI', link: '/composants/hmi'},
           { text: 'Arduino', link: '/composants/arduino'},
           { text: 'csn-a2', link: '/composants/csn-a2'},
+          { text: 'ASMI1-19', link: '/composants/ASMI1-19'},
+          { text: 'L7809CV', link: '/composants/L7809CV'},
         ]
       },
       {
         text: 'Mention',
         items: [
-          { text: 'license', link: '/license' }
+          { text: 'License', link: '/license' },
+          { text: 'Marque', link: '/groupe' }
         ]
       }
     ],

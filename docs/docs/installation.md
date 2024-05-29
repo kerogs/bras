@@ -10,8 +10,9 @@ Liste des équipements nécessaire pour le bon fonctionnement.
 - Arduino Mega 2560 [DATASHEET](/composants/arduino)
 - STONE [HMI](/composants/hmi)
 - Porte logique inverseur - [4069](/composants/4069)
+- Régulateur 12v -> 9v - [L7809CV](/composants/L7809CV)
 - Imprimante thermique TTL - [csn-a2](/composants/csn-a2)
-
+- Shield Arduino - [ASMI1-19](/composants/ASMI1-19)
 ## Branchement
 Ceci est le branchement entre les différents composants
 
@@ -58,6 +59,10 @@ La valeur de la résistance pour la LED dépant du modèle utiliser. Mais il est
 Branchement de l'[arduino mega](/composants/arduino.md) avec le [HMI](/composants/hmi.md) avec entre le [4069](/composants/4069.md) 
 ![Rendu image](https://src.ks-infinite.fr/bras/Cablage_photo.jpg)
 
+### Schéma de cablage complet
+Schéma de connexion entre tous les composants. (Représentation global du Shield ASMI1-19)
+![Rendu](https://src.ks-infintie.fr/bras/proteus-prev1.png)
+
 ### Schéma de cablage <Badge type="info" text="easyEDA" />
 Schéma de cablager entre le [STONE HMI](/composants/hmi), [arduino](/composants/arduino),  [4069](/composants/4069), [Imprimante](/composants/csn-a2) 
-![Rendu image](http://src.ks-infinite.fr/bras/Schematic_bras_2024-05-11.png) 
+![Rendu image](https://src.ks-infinite.fr/bras/Schematic_bras_2024-05-11.png)

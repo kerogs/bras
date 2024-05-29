@@ -1,4 +1,6 @@
 # CSN-A2 <Badge type="tip" text="^1.1.35-beta" />
+![Adafruit](https://img.shields.io/badge/Adafruit-%23000?style=for-the-badge&logo=adafruit&logoColor=fff)
+
 Le CSN-A2 est une imprimante thermique TTL fonctionnant avec la librairie de chez adafruit.
 
 ## Utilisation
@@ -20,9 +22,9 @@ Rendez-vous à la page [des fonctions](/functions/imprimante)
 
 ## Illustration
 ### Illustration depuis le schéma
-![Schéma](http://src.ks-infinite.fr/bras/Capture%20d'%C3%A9cran%202024-05-11%20162033.png)
+![Schéma](https://src.ks-infinite.fr/bras/Capture%20d'%C3%A9cran%202024-05-11%20162033.png)
 ### Illustration depuis la datasheet
-![Imprimante image](http://src.ks-infinite.fr/bras/Capture%20d'%C3%A9cran%202024-05-11%20161728.png)
+![Imprimante image](https://src.ks-infinite.fr/bras/Capture%20d'%C3%A9cran%202024-05-11%20161728.png)
 
 ## Lien utile
-- [DATASHEET](http://src.ks-infinite.fr/bras/stone-hmi-Instruction-Sets-V2.5RC-20240105-datasheet.pdf)
+- [DATASHEET](https://src.ks-infinite.fr/bras/stone-hmi-Instruction-Sets-V2.5RC-20240105-datasheet.pdf)
