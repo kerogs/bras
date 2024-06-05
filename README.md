@@ -1,7 +1,12 @@
 <div align="center">
-    <img alt="banner" src="https://src.ks-infinite.fr/bras/bras.png" width="80">
-    <h3 align="center">B.R.A.S</h3>
-    <em>Projet BRAS - Code et Documentation.</em>
+<img alt="banner" src="https://src.ks-infinite.fr/bras/bras.png"width="80">
+<h3 align="center">B.R.A.S</h3>
+<em>Projet BRAS - Code et Documentation.</em>
+
+<br>
+
+<img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/t/kerogs/bras?style=for-the-badge&logo=github&logoColor=fff">
+
 </div>
 
 ### Language de programmation
@@ -77,7 +82,7 @@ Tous les fichiers de documentation sont rédigés au format Markdown, mais fonct
 ## Code arduino
 Tout le code Arduino est situé dans le dossier  ``/public/code/``. Le code principal se trouve dans ``/public/code/main.ino``. Il existe une partie qui s'appelle ``admin.ino`` qui sert à tester l'intégralité du code. La documentation des commandes est disponible dans la section ADR dans la version du code admin choisis. 
 
-## Modifications
+### Modifications
 ***Voici la liste des éléments à ajouter :***
 
 - Intégrer votre nouvelle version de code dans le dossier ADR et la lier à son fichier ``/docs/ADR/index.md``.
@@ -106,6 +111,10 @@ export default {
 ## Utilisation de la documentation.
 Le code embarque avec lui une version selfhosted de la documentation. Pour cela, il vous suffit d'effectuer les commandes suivantes :
 - Accédez au dossier ``/docs/``
+```sh
+cd docs
+```
+
 - Exécutez la commande suivante pour build la documentation :
 ```sh
 npm run docs:build
