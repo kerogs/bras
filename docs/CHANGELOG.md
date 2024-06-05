@@ -7,6 +7,18 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 2.7-beta
+### Ajout
+- Version 1.2.2-admin.
+
+### Modification
+- Nouvelle version pour la page d'installation
+- Readme
+
+### Suppression
+- Tracking du fichier nodes_module par git
+- Documentation intégré supprimé (à build soit même)
+
 ## Version 2.6-beta
 ### Ajout
 - ASMI1-19
