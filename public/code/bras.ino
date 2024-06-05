@@ -6,8 +6,8 @@
    * @author Lucas W.
    * @author Florian V.
    * @author Jessy K.
-   * @version b1.1.36
-   * @date 07/02/2024
+   * @version b1.1.38
+   * @date 23/05/2024
    * @copyright Copyright - B.R.A.S, Kerogs Infinite, Lycée Condorcet - Stiring-Wendel
    */
 
@@ -90,8 +90,31 @@ void loop() {
         PasswordTemp = getValueAdmin(tampon, tamponLength);
         Serial.println(PasswordTemp);
 
-        if (PasswordTemp == "160524") {
+        //MDP Admin pour activer bouton
+        if (PasswordTemp == 16052) {
           Serial.println("[MODE ADMIN [CONFIRMATION]]");
+          Serial3.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":true}>ET");
+          Serial.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":true}>ET");
+        } else {
+          Serial3.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":false}>ET");
+          Serial.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":false}>ET");
+        }
+        //Basculer le bouton pour éteindre
+        if (searchArray(tampon, "CA", 2) || searchArray(tampon, "FA", 2)) {
+          Serial3.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":false}>ET");
+          Serial.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":false}>ET");
+        }
+      }
+      // Bouton Casier Admin appuyer
+      if (searchArray(tampon, "Admin", 5)) {
+        Serial.println("[CASIER ADMIN]");
+        for (int i = 0; i <= 6; i++) {
+          String casierNumber = "Admin" + String(i);
+          if (searchArray(tampon, casierNumber.c_str(), 7)) {
+            Serial.println("[NUMERO " + String(i) + "]");
+            casierActionNumber = i;
+            break;
+          }
         }
       }
     }
@@ -114,12 +137,13 @@ void loop() {
       for (int i = 1; i < 7; i++) {
         if (casierActionNumber == i) {
           if (casiersPassword[i]) {
-            Serial3.print("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"IC\",\"enable\":false}>ET");
             Serial.println("[CASIER STATUS : DEJA UTILISER]");
+            // pour tester si je peux rendre le bouton invisible   Serial3.print("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"IC\",\"enable\":false}>ET");
+            Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"IC\",\"visible\":false}>ET");
             casierUtilisation = true;
           } else {
-            Serial3.print("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"IC\",\"enable\":true}>ET");
             Serial.println("[CASIER STATUS : PAS UTILISER]");
+            Serial3.print("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"IC\",\"enable\":true}>ET");
           }
         }
       }

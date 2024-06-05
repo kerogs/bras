@@ -6,7 +6,7 @@
    * @author Lucas W.
    * @author Florian V.
    * @author Jessy K.
-   * @version 1.1.3-admin
+   * @version 1.2.1-admin
    * @date 07/02/2024
    * @copyright Copyright - B.R.A.S, Kerogs Infinite, Lycée Condorcet - Stiring-Wendel
    */
@@ -15,8 +15,8 @@
 #include "SoftwareSerial.h"
 
 #define led 2
-#define TX_PIN 47
-#define RX_PIN 49
+#define TX_PIN 46
+#define RX_PIN 48
 
 SoftwareSerial printSerial(RX_PIN, TX_PIN);
 Adafruit_Thermal printer(&printSerial);
@@ -35,7 +35,7 @@ int casiersPassword[7];
 
 int PasswordTemp;
 
-int M1dirpin = 7;
+int M1dirpin = 7; 
 int M1steppin = 6;
 const int BP1 = 30;
 const int BP2 = 31;
