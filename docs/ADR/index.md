@@ -8,7 +8,7 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 ## Liste des versions
 
 ### Beta
-- [1.1.38-beta-rc2-alt1](/ADR/1.1.38-beta-rc2-alt1)
+- ~~[1.1.38-beta-rc2-alt1](/ADR/1.1.38-beta-rc2-alt1)~~
 - [1.1.38-beta-rc2](/ADR/1.1.38-beta-rc2)
 - [1.1.38-beta](/ADR/1.1.38-beta)
 - [1.1.37-beta](/ADR/1.1.37-beta)
@@ -37,6 +37,8 @@ Les versions antérieur à la ``1.1.8-alpha`` ne sont pas disponible car inutili
 :::
 
 ## Admin mode
+- [1.2.2-admin](/ADR/1.2.2-admin)
+- [1.2.1-admin](/ADR/1.2.1-admin)
 - [1.1.3-admin](/ADR/1.1.3-admin)
 - [1.1.2-admin](/ADR/1.1.2-admin)
 - [1.1.1-admin](/ADR/1.1.1-admin)
