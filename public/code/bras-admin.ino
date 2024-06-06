@@ -6,7 +6,7 @@
    * @author Lucas W.
    * @author Florian V.
    * @author Jessy K.
-   * @version 1.2.1-admin
+   * @version 1.2.2-admin
    * @date 07/02/2024
    * @copyright Copyright - B.R.A.S, Kerogs Infinite, Lycée Condorcet - Stiring-Wendel
    */
@@ -37,12 +37,10 @@ int PasswordTemp;
 
 int M1dirpin = 7; 
 int M1steppin = 6;
-const int BP1 = 30;
-const int BP2 = 31;
-const int BPfdc = 32;
-const int BPfdc2 = 33;
-const int LedR = 40;
-const int LedG = 41;
+const int BPfdc = 38;
+const int BPfdc2 = 36;
+const int LedR = 32;
+const int LedG = 30;
 
 bool casierUtilisation = false;  // true ? casiser utilisé : casier non utilisé
 bool modeAdmin = false;
@@ -65,7 +63,7 @@ void loop() {
     if (searchArray(tampon, "open.casier", 11) || searchArray(tampon, "test.all", 8)) {
       Serial.println("[ks:open.casier]");
       // Ouvrir la porte.
-      while (digitalRead(BPfdc) != HIGH) {
+      while (digitalRead(BPfdc) != LOW) {
         rotation_montre();
         digitalWrite(LedG, HIGH);
         digitalWrite(LedR, LOW);
@@ -75,7 +73,7 @@ void loop() {
     if (searchArray(tampon, "close.casier", 11) || searchArray(tampon, "test.all", 8)) {
       Serial.println("[ks:close.casier]");
       // Fermer la porte
-      while (digitalRead(BPfdc2) != HIGH) {
+      while (digitalRead(BPfdc2) != LOW) {
         rotation_inverse();
         digitalWrite(LedG, LOW);
         digitalWrite(LedR, HIGH);
@@ -213,10 +211,6 @@ void configset() {
   pinMode(M1dirpin, OUTPUT);
   Serial.print(".");
   pinMode(M1steppin, OUTPUT);
-  Serial.print(".");
-  pinMode(BP1, INPUT);
-  Serial.print(".");
-  pinMode(BP2, INPUT);
   Serial.print(".");
   pinMode(BPfdc, INPUT);
   Serial.print(".");

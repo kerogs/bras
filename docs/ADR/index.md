@@ -7,7 +7,10 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 
 ## Liste des versions
 
+- [1.2.1](/ADR/1.2.1)
+
 ### Beta
+- [1.1.39-beta](/ADR/1.1.39-beta)
 - ~~[1.1.38-beta-rc2-alt1](/ADR/1.1.38-beta-rc2-alt1)~~
 - [1.1.38-beta-rc2](/ADR/1.1.38-beta-rc2)
 - [1.1.38-beta](/ADR/1.1.38-beta)
