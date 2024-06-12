@@ -165,7 +165,7 @@ if (casierActionNumber != 0 && searchArray(tampon, "PC", 2)) {
 ```c++
 int casierActionNumber;
 ```
-## Utilisation
+###  Utilisation
 Permet d'enregistrer temporairement la valeur du casier utilisé.
 ```c++:line-numbers=1 {7}
 if (searchArray(tampon, "Casier", 6)) {
@@ -179,4 +179,19 @@ if (searchArray(tampon, "Casier", 6)) {
     }
   }
 }
+
+## serialSpaceReset
+### code
+```c++:line-numbers
+bool serialSpaceReset = true;
 ``` 
+### Utilisati
+Permet de vérifier si l'utilisateur imprime ou non son mot de passe lors de l'utilisation du casier
+```c++:line-numbers {3}
+// Impression Oui/Non
+if(searchArray(tampon, "IC", 2)){
+  printAction ? printAction = false : printAction = true;
+  Serial.print("Imprimante : ");
+  Serial.println(printAction);
+}
+```

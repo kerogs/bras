@@ -7,6 +7,7 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 
 ## Liste des versions
 
+- [1.2.2](/ADR/1.2.2)
 - [1.2.1](/ADR/1.2.1)
 
 ### Beta
@@ -47,7 +48,7 @@ Les versions antérieur à la ``1.1.8-alpha`` ne sont pas disponible car inutili
 - [1.1.1-admin](/ADR/1.1.1-admin)
 
 ## Autre code
-- [send tram](/ADR/send-tram)
+- [bras-simtram](/ADR/bras-simtram)
 
 ## Template
 - [template](/ADR/template)

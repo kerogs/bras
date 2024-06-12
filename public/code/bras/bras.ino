@@ -6,7 +6,7 @@
    * @author Lucas W.
    * @author Florian V.
    * @author Jessy K.
-   * @version 1.2.1
+   * @version 1.2.2
    * @date 29/05/2024
    * @copyright Copyright - B.R.A.S, Kerogs Infinite, Lycée Condorcet - Stiring-Wendel
    */
@@ -36,7 +36,7 @@ int casiersPassword[7];
 
 int PasswordTemp;
 
-int M1dirpin = 7; 
+int M1dirpin = 7;
 int M1steppin = 6;
 const int BPfdc = 38;
 const int BPfdc2 = 36;
@@ -45,6 +45,15 @@ const int LedG = 30;
 
 bool casierUtilisation = false;  // true ? casiser utilisé : casier non utilisé
 bool modeAdmin = false;
+bool printAction = true;
+
+
+
+// configuration
+bool serialSpaceReset = true;
+
+
+
 
 void setup() {
   configset();
@@ -213,12 +222,18 @@ void loop() {
       Serial.println(numDigits(PasswordTemp));
     }
 
+    // Impression Oui/Non
+    if(searchArray(tampon, "IC", 2)){
+      printAction ? printAction = false : printAction = true;
+      Serial.print("Imprimante : ");
+      Serial.println(printAction);
+    }
+
     // Confirmer Client (CC)
     if (casierActionNumber != 0 && searchArray(tampon, "CC", 2)) {
       Serial.println("[CONFIRMATION CLIENT]");
       Serial.println(casierActionNumber);
 
-      Serial.println(casierActionNumber);
       Serial.println(PasswordTemp);
       // Serial.println(casier1Password);
 
@@ -257,7 +272,10 @@ void loop() {
           digitalWrite(LedG, LOW);
           digitalWrite(LedR, HIGH);
         }
-        imprimante(casierActionNumber, PasswordTemp);
+        if(printAction){
+          Serial.println("[IMPRIMANTE]");
+          imprimante(casierActionNumber, PasswordTemp);
+        }
 
         // Ouvrir la porte.
         // while (digitalRead(BPfdc) != HIGH) {
@@ -267,6 +285,7 @@ void loop() {
       casierActionNumber = NULL;
       casierUtilisation = false;
       PasswordTemp = 0;
+      printAction = true;
     }
 
     // Password popup up close
@@ -301,6 +320,7 @@ void loop() {
 
 
 void serialEvent3() {
+  monitorSerialSpace();
   while (Serial3.available() > 0) {
     digitalWrite(led, HIGH);
     incomingByte = Serial3.read();
@@ -407,7 +427,7 @@ void tamponReset() {
 void sendColorHMI(char widget[], char color_object[], char color[]) {
   // Vert : rgba(14, 217, 38, 1) = 4279163174
   // Rouge : rgba(235, 45, 71, 1) = 4293602631
-  // Blanc : rgba(255, 255, 255, 1)= 4294967295
+  // Blanc : rgba(255, 255, 255, 1) = 4294967295
   // Serial3.print("ST<{\"cmd_code\":\"set_buzzer\",\"type\":\"system\",\"time\":200}>ET");
   // Serial3.print("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\"Casier1\",\"color_object\":\"bg_color\", \"color\":4293602631}>ET");
   // Serial3.print("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\"Casier1\",\"color_object\":\"text_color\", \"color\":4294967295}>ET");
@@ -605,4 +625,12 @@ void imprimante(int codeCasierNumber, int codeCasier) {
   printer.setSize('S');
   printer.feed(2);
   printer.setDefault();  // Restore printer to defaults
+}
+
+void monitorSerialSpace() {
+  if (serialSpaceReset) {
+    for (int i = 0; i <= 100; i++) {
+      Serial.println("");
+    }
+  }
 }
