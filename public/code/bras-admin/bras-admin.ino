@@ -13,6 +13,7 @@
 
 #include "Adafruit_Thermal.h"
 #include "SoftwareSerial.h"
+#include "bras_config.h"
 
 #define led 2
 #define TX_PIN 46

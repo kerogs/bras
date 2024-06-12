@@ -38,12 +38,7 @@ int PasswordTemp;
 bool casierUtilisation = false;  // true ? casiser utilisé : casier non utilisé
 bool modeAdmin = false;
 bool printAction = true;
-
-
-
-// configuration
-bool serialSpaceReset = true;
-
+bool serialLogs = true;
 
 
 
@@ -620,7 +615,7 @@ void imprimante(int codeCasierNumber, int codeCasier) {
 }
 
 void monitorSerialSpace() {
-  if (serialSpaceReset) {
+  if (SERIAL_SPACE_RESET) {
     for (int i = 0; i <= 100; i++) {
       Serial.println("");
     }
