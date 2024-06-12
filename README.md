@@ -11,6 +11,7 @@
 
 ### Language de programmation
 ![C++](https://img.shields.io/badge/c%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=fff)
+![C](https://img.shields.io/badge/C-%23A8B9CC?style=for-the-badge&logo=C&logoColor=000)
 ![LabVIEW](https://img.shields.io/badge/labview-%23FFDB00?style=for-the-badge&logo=labview&logoColor=000)
 
 ### Documentation
