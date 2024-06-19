@@ -7,6 +7,9 @@ Il peut manquer certaine version. Certaine n'ont pas été mise car c'est derni�
 
 ## Liste des versions
 
+- [1.2.5](/ADR/1.2.5)
+- [1.2.4](/ADR/1.2.4)
+- [1.2.3](/ADR/1.2.3)
 - [1.2.2](/ADR/1.2.2)
 - [1.2.1](/ADR/1.2.1)
 

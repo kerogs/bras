@@ -3,7 +3,7 @@
 ## Note
 
 ## Code
-```c++
+```c++:line-numbers
 void setup() {
 }
 

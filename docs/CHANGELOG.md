@@ -7,6 +7,17 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 2.8-beta
+### Ajout
+- Ajout du code 1.2.4, 1.2.5
+- Ajout d'image d'illustration
+- Ajout d'une image de la maquette terminé
+- Ajout d'une page expliquant les trames
+
+### Suprression
+- Suppression de la page "Variable". Toujours accèssible à l'url "/docs/variable" mais n'est plus indexé
+
+
 ## Version 2.7-beta
 ### Ajout
 - Version 1.2.2-admin.

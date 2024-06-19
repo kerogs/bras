@@ -41,8 +41,8 @@ export default defineConfig({
         text: 'Programmation',
         items: [
           { text: 'Widget Liste', link: "/docs/widget"},
+          { text: 'Trame', link: '/docs/trame'},
           { text: 'Liste des fonctions', link: '/functions/' },
-          { text: 'Liste des Variables', link: "/docs/variable"}
         ]
       },
       {

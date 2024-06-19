@@ -29,3 +29,6 @@ Il est important de noter que les commandes moteurs sont au total branché sur l
 - bouton ouverture/fermeture
 ### dri0023
 - Moteur
+
+## Résultat montage
+![Resultat montage](/temp/resultat_montage.jpg)
