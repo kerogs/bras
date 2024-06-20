@@ -7,7 +7,7 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
-## Version 2.8-beta
+## Version 2.8-rc1
 ### Ajout
 - Ajout du code 1.2.4, 1.2.5, 1.2.5-sm
 - Ajout d'image d'illustration
