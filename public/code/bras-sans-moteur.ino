@@ -1,21 +1,23 @@
+
 /**
-   * @file bras.cpp
+   * @file bras-sans-moteur.cpp
    * @brief Communication entre l'afficheur STONE HMI, Arduino MEGA et action des casiers du B.R.A.S
    * documentation : https://docs.ks-infinite.fr/bras/
    * github : https://github.com/kerogs/bras/
    * @author Lucas W.
    * @author Florian V.
    * @author Jessy K.
-   * @version 1.2.2
+   * @version 1.2.5-SM
    * @date 29/05/2024
    * @copyright Copyright - B.R.A.S, Kerogs Infinite, Lycée Condorcet - Stiring-Wendel
    */
 
 #include "Adafruit_Thermal.h"
 #include "SoftwareSerial.h"
-#include "bras_config.h"
 
-
+#define led 2
+#define TX_PIN 46
+#define RX_PIN 48
 
 SoftwareSerial printSerial(RX_PIN, TX_PIN);
 Adafruit_Thermal printer(&printSerial);
@@ -35,125 +37,134 @@ int casiersPassword[7];
 
 int PasswordTemp;
 
+int M1dirpin = 7;
+int M1steppin = 6;
+const int BPfdc = 38;
+const int BPfdc2 = 36;
+const int LedR = 32;
+const int LedG = 30;
+
 bool casierUtilisation = false;  // true ? casiser utilisé : casier non utilisé
 bool modeAdmin = false;
 bool printAction = true;
-bool serialLogs = true;
+
+
+
+// configuration
+const bool serialSpaceReset = true;
+const int adminPasswordPreset = 1234;
 
 
 
 void setup() {
   configset();
-
-  // sendColorHMI("Casier1", "bg_color", "white");
-  // Serial3.print("ST<{\"cmd_code\":\"set_buzzer\",\"type\":\"system\",\"time\":10000}>ET");
-  // Serial3.print("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\"Casier1\",\"color_object\":\"bg_color\", \"color\":4293602631}>ET");
 }
 
 
 
 void loop() {
-  // éteint la led à la fin d'une trame
   digitalWrite(led, LOW);
-  // if (digitalRead(BP1) == HIGH) /*Si le bouton 1 est appuyer*/
-  // {
-  //   while (digitalRead(BPfdc2) != HIGH) /*Tant que le bouton de find de course est différent de l'état haut*/
-  //   {
-  //     rotation_inverse();      /*Lance la rotation du sens des aiguilles d'une montres*/
-  //     digitalWrite(LedR, LOW); /*Eteint la led Rouge*/
-  //   }
-  // } else if (digitalRead(BP2) == HIGH) /*Autrement, pendant que le bouton 2 est appyer*/
-  // {
-  //   while (digitalRead(BPfdc) != HIGH) /*Tant que le bouton 2 de fin de course est différent de l'état haut*/
-  //   {
-  //     rotation_montre();       /*Lance la rotation du sens inverse des aiguilles d'une montres*/
-  //     digitalWrite(LedR, LOW); /*Eteint la led Rouge*/
-  //   }
-  // }
 
-  // Début de trame
+  // --------- Début de trame ---------
   if (searchArray(tampon, "ST<", 3)) {
     Serial.println("[DEBUT DE TRAME]");
 
+    // --------- Mode Admin ---------
     if (searchArray(tampon, "MA", 2) || modeAdmin) {
       modeAdmin = true;
 
+      // --------- Admin Password ---------
       if (searchArray(tampon, "AP", 2)) {
         Serial.println("[MODE ADMIN [???]]");
-        // if valeur casier == 4
         int tamponLength = sizeof(tampon) / sizeof(tampon[0]);
         PasswordTemp = getValueAdmin(tampon, tamponLength);
         Serial.println(PasswordTemp);
 
-        //MDP Admin pour activer bouton
-        if (PasswordTemp == 16052) {
+        if (PasswordTemp == adminPasswordPreset) {
           Serial.println("[MODE ADMIN [CONFIRMATION]]");
           Serial3.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":true}>ET");
           Serial.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CA\",\"enable\":true}>ET");
         }
       }
-      // Bouton Casier Admin appuyer
+
+      // [Détection casier admin]
       if (searchArray(tampon, "Admin", 5)) {
         Serial.println("[CASIER ADMIN]");
         for (int i = 0; i <= 6; i++) {
+          String casierNumber = "Casier" + String(i);
           String casierAdminNumber = "Admin" + String(i);
           if (searchArray(tampon, casierAdminNumber.c_str(), 6)) {
             Serial.println("[NUMERO " + String(i) + "]");
+            casierActionNumber = i;
             casierAdminActionNumber = i;
             break;
           }
         }
+        // [Vérifie si casier déjà utilisé]
+        for (int i = 1; i < 7; i++) {
+          if (casierActionNumber == i) {
+            if (casiersPassword[i]) {
+              // [Casier déjà utilisé -> on cache les textes pour utilisé un casier]
+              Serial.println("[CASIER STATUS : DEJA UTILISER]");
+              Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer1\",\"visible\":false}>ET");
+              Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer2\",\"visible\":false}>ET");
+              Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer2a\",\"visible\":false}>ET");
+              Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer3\",\"visible\":false}>ET");
+              Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"IC\",\"visible\":false}>ET");
+              Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer4\",\"visible\":true}>ET");
+              casierUtilisation = true;
+            } else {
+              Serial.println("[CASIER STATUS : PAS UTILISER]");
+            }
+          }
+        }
       }
 
-      // Confirmer Admin (CA)
-      if (casierAdminActionNumber != 0 && searchArray(tampon, "CA", 2)) {
+      // --------- Dévérouiller Admin ---------
+      if (casierAdminActionNumber != 0 && searchArray(tampon, "DA", 2)) {
         Serial.println("[CONFIRMATION ADMIN]");
         Serial.println(casierAdminActionNumber);
+
         Serial.println(PasswordTemp);
+        // Serial.println(casier1Password);
 
         for (int i = 1; i < 7; i++) {
           Serial.print(i);
           Serial.print(" : ");
           Serial.println(casiersPassword[i]);
         }
-
-        // si casier utilisé
-        if (casierUtilisation) {
-          // Check bon MDP
+        // [si casier utilisé]
+        if (!casierUtilisation) {  // Jai ajouté le ! et ca a marché, faudrait tester sans
           Serial.println(casierAdminActionNumber);
           Serial.println(casiersPassword[casierAdminActionNumber]);
           Serial.println(PasswordTemp);
+          sendColorHMI(casierActionNumber, "bg_color", "green");
           sendColorHMI(casierAdminActionNumber, "bg_color", "green");
           Serial.println("[OUVERTURE PORTE]");
           casiersPassword[casierAdminActionNumber] = 0;
 
-          // Ouvrir la porte.
-          while (digitalRead(BPfdc) != LOW) {
-            rotation_montre();
-            digitalWrite(LedG, HIGH);
-            digitalWrite(LedR, LOW);
-          }
-        } else {
-          sendColorHMI(casierAdminActionNumber, "bg_color", "red");
-          Serial.println("[FERMETURE PORTE]");
-          // Fermer la porte
-          while (digitalRead(BPfdc2) != LOW) {
-            rotation_inverse();
-            digitalWrite(LedG, LOW);
-            digitalWrite(LedR, HIGH);
-          }
+          // [Ouvrir la porte.]
+          // while (digitalRead(BPfdc) != LOW) {
+          //   rotation_montre();
+          //   digitalWrite(LedG, HIGH);
+          //   digitalWrite(LedR, LOW);
+          // }
         }
+        casierActionNumber = NULL;
         casierAdminActionNumber = NULL;
         casierUtilisation = false;
         PasswordTemp = 0;
+        printAction = true;
       }
     }
+    // ----------- Fin mode admin -----------
 
-    // Bouton Casier appuyer
+    // [Détection du casier sélectionné]
     if (searchArray(tampon, "Casier", 6)) {
       Serial.println("[CASIER]");
       for (int i = 0; i <= 6; i++) {
         String casierNumber = "Casier" + String(i);
+        String casierAdminNumber = "Admin" + String(i);
         if (searchArray(tampon, casierNumber.c_str(), 7)) {
           Serial.println("[NUMERO " + String(i) + "]");
           casierActionNumber = i;
@@ -161,12 +172,11 @@ void loop() {
         }
       }
 
-      // TODO EVITER LA REPETITION POUR PAS DESACTIVER AUTOMATIQUEMENT
-
-      // Si casier déjà fermer ?
+      // [Vérifie si casier déjà fermé]
       for (int i = 1; i < 7; i++) {
         if (casierActionNumber == i) {
           if (casiersPassword[i]) {
+            // [Casier déjà utilisé -> on cache les textes pour utilisé un casier]
             Serial.println("[CASIER STATUS : DEJA UTILISER]");
             Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer1\",\"visible\":false}>ET");
             Serial3.print("ST<{\"cmd_code\":\"set_visible\",\"type\":\"widget\",\"widget\":\"Inserer2\",\"visible\":false}>ET");
@@ -177,12 +187,13 @@ void loop() {
             casierUtilisation = true;
           } else {
             Serial.println("[CASIER STATUS : PAS UTILISER]");
+            casierUtilisation = false;
           }
         }
       }
     }
 
-    // MDP set Casier
+    // ----------- Détection MDP -----------
     if (casierActionNumber != 0 && searchArray(tampon, "PC", 2)) {
       Serial.println("[CASIER PASSWORD [MDP]");
       // if valeur casier === 4
@@ -190,14 +201,7 @@ void loop() {
       PasswordTemp = getValue(tampon, tamponLength);
       Serial.println(PasswordTemp);
 
-      if (!casierUtilisation) {
-        for (int i = 1; i < 7; i++) {
-          if (casierActionNumber == i) {
-            casiersPassword[i] = PasswordTemp;
-          }
-        }
-      }
-
+      // [Vérifier si nombre de PC == 4]
       if (numDigits(PasswordTemp) == 4) {
         Serial3.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CC\",\"enable\":true}>ET");
         Serial.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":\"CC\",\"enable\":true}>ET");
@@ -209,20 +213,19 @@ void loop() {
       Serial.println(numDigits(PasswordTemp));
     }
 
-    // Impression Oui/Non
-    if(searchArray(tampon, "IC", 2)){
+    // ----------- Activé/Désactivé Impression -----------
+    if (searchArray(tampon, "IC", 2)) {
       printAction ? printAction = false : printAction = true;
       Serial.print("Imprimante : ");
       Serial.println(printAction);
     }
 
-    // Confirmer Client (CC)
+    // ----------- Confirmer client -----------
     if (casierActionNumber != 0 && searchArray(tampon, "CC", 2)) {
       Serial.println("[CONFIRMATION CLIENT]");
       Serial.println(casierActionNumber);
 
       Serial.println(PasswordTemp);
-      // Serial.println(casier1Password);
 
       for (int i = 1; i < 7; i++) {
         Serial.print(i);
@@ -230,46 +233,56 @@ void loop() {
         Serial.println(casiersPassword[i]);
       }
 
-      // si casier utilisé
+      // [Vérifier si casier utilisé]
       if (casierUtilisation) {
-        // Check bon MDP
         Serial.println(casierActionNumber);
         Serial.println(casiersPassword[casierActionNumber]);
         Serial.println(PasswordTemp);
+
+        // [Vérifier bon mot de passe]
         if (casiersPassword[casierActionNumber] == PasswordTemp) {
           sendColorHMI(casierActionNumber, "bg_color", "green");
+          sendColorHMI(casierAdminActionNumber, "bg_color", "green");
           Serial.println("[OUVERTURE PORTE]");
           casiersPassword[casierActionNumber] = 0;
 
-          // Ouvrir la porte.
-          while (digitalRead(BPfdc) != LOW) {
-            rotation_montre();
-            digitalWrite(LedG, HIGH);
-            digitalWrite(LedR, LOW);
-          }
+          // [Ouvrir la porte.]
+          // while (digitalRead(BPfdc) != LOW) {
+          //   rotation_montre();
+          //   digitalWrite(LedG, HIGH);
+          //   digitalWrite(LedR, LOW);
+          // }
         } else {
           Serial.println("[ERREUR : FAUX MDP]");
         }
       } else {
-        sendColorHMI(casierActionNumber, "bg_color", "red");
-        Serial.println("[FERMETURE PORTE]");
-        // Fermer la porte
-        while (digitalRead(BPfdc2) != LOW) {
-          rotation_inverse();
-          digitalWrite(LedG, LOW);
-          digitalWrite(LedR, HIGH);
+
+        // [enregistrement mdp]
+        if (!casierUtilisation) {
+          for (int i = 1; i < 7; i++) {
+            if (casierActionNumber == i) {
+              casiersPassword[i] = PasswordTemp;
+              Serial.println("[MDP ENREGISTRE]");
+            }
+          }
         }
-        if(printAction){
+
+        sendColorHMI(casierActionNumber, "bg_color", "red");
+        sendColorHMI(casierAdminActionNumber, "bg_color", "red");
+        Serial.println("[FERMETURE PORTE]");
+        // [Fermer la porte]
+        // while (digitalRead(BPfdc2) != LOW) {
+        //   rotation_inverse();
+        //   digitalWrite(LedG, LOW);
+        //   digitalWrite(LedR, HIGH);
+        // }
+        if (printAction) {
           Serial.println("[IMPRIMANTE]");
           imprimante(casierActionNumber, PasswordTemp);
         }
-
-        // Ouvrir la porte.
-        // while (digitalRead(BPfdc) != HIGH) {
-        //   rotation_montre();
-        // }
       }
       casierActionNumber = NULL;
+      casierAdminActionNumber = NULL;
       casierUtilisation = false;
       PasswordTemp = 0;
       printAction = true;
@@ -315,30 +328,23 @@ void serialEvent3() {
     tamponPos++;
   }
 
-  // Afficher la trame en ASCII
   Serial.println("+=======================+");
   Serial.print("|> ASCII : ");
   for (int i = 0; i < tamponPos; i++) {
     Serial.print(tampon[i]);
   }
   Serial.println("");
-
-  // Afficher la trame en HEX
   Serial.print("|> HEX : ");
   for (int i = 0; i < tamponPos; i++) {
     Serial.print(tampon[i], HEX);
     Serial.print(" ");
   }
   Serial.println("");
-
   Serial.println("+=======================+");
 
-  // En attente d'un autre
   Serial.println("En attente...");
 }
 
-
-// configset
 void configset() {
   // PC
   while (!Serial) Serial.print(".");
@@ -361,6 +367,10 @@ void configset() {
   pinMode(led, OUTPUT);
   Serial.print(".");
 
+  // ALLUME
+  digitalWrite(LedG, HIGH);
+  Serial.print(".");
+
   pinMode(M1dirpin, OUTPUT);
   Serial.print(".");
   pinMode(M1steppin, OUTPUT);
@@ -374,8 +384,6 @@ void configset() {
   pinMode(LedG, OUTPUT);
   Serial.print(".");
 
-
-  // Fin chargement (ne pas supprimer)
   delay(500);
   Serial.println("Fin");
 }
@@ -415,10 +423,6 @@ void sendColorHMI(char widget[], char color_object[], char color[]) {
   // Vert : rgba(14, 217, 38, 1) = 4279163174
   // Rouge : rgba(235, 45, 71, 1) = 4293602631
   // Blanc : rgba(255, 255, 255, 1) = 4294967295
-  // Serial3.print("ST<{\"cmd_code\":\"set_buzzer\",\"type\":\"system\",\"time\":200}>ET");
-  // Serial3.print("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\"Casier1\",\"color_object\":\"bg_color\", \"color\":4293602631}>ET");
-  // Serial3.print("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\"Casier1\",\"color_object\":\"text_color\", \"color\":4294967295}>ET");
-  // Serial3.print("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\"Casier1\",\"color_object\":\"border_color\", \"color\":4294967295}>ET");
 
   color == "white" ? color = "4294967295" : color = color;
   color == "black" ? color = "4278190080" : color = color;
@@ -431,6 +435,12 @@ void sendColorHMI(char widget[], char color_object[], char color[]) {
   widget == 4 ? widget = "Casier4" : widget = widget;
   widget == 5 ? widget = "Casier5" : widget = widget;
   widget == 6 ? widget = "Casier6" : widget = widget;
+  widget == 11 ? widget = "Admin1" : widget = widget;
+  widget == 12 ? widget = "Admin2" : widget = widget;
+  widget == 13 ? widget = "Admin3" : widget = widget;
+  widget == 14 ? widget = "Admin4" : widget = widget;
+  widget == 15 ? widget = "Admin5" : widget = widget;
+  widget == 16 ? widget = "Admin6" : widget = widget;
 
   String widgetStr = widget;
   String color_objectStr = color_object;
@@ -615,7 +625,7 @@ void imprimante(int codeCasierNumber, int codeCasier) {
 }
 
 void monitorSerialSpace() {
-  if (SERIAL_SPACE_RESET) {
+  if (serialSpaceReset) {
     for (int i = 0; i <= 100; i++) {
       Serial.println("");
     }
