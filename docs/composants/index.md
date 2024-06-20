@@ -11,8 +11,8 @@ Bienvenue sur la liste des composants utilisé.
 - [L7809CV](/composants/L7809CV)
 - [dri0023](/composants/dri0023)
 
-## Schéma de cablage <Badge type="info" text="easyEDA" />
+## Schéma de cablage <Badge type="info" text="Proteus" />
 Schéma de cablage entre l'écran, HMI, 4069 et csn-a2 
-![Rendu image](https://src.ks-infinite.fr/bras/Schematic_bras_2024-05-11.png)
+![Rendu image](https://src.ks-infinite.fr/bras/preview2.png)
 
 

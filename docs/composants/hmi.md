@@ -8,28 +8,30 @@ Pour établir la communication entre le HMI et l'Arduino, on utilise une [porte 
 :::
 
 ::: danger
-Le protocole de communication entre le HMI et l'[arduino](/composants/arduino) ne sont pas le même !
+Le protocole de communication entre le HMI et l'[Arduino](/composants/arduino) ne sont pas les mêmes !
 :::
 
 ## Oscilloscope
-### Trame envoyé vers l'arduino
-Les valeurs situé après les octets ``0xE7 A0`` ne sont pas à prendre en compte et ne serve qu'à vérifier que le message possède aucune erreur.
+
+### Trame envoyée vers l'Arduino
+Les valeurs situées après les octets `0xE7 A0` ne sont pas à prendre en compte et servent uniquement à vérifier que le message ne comporte aucune erreur.
 ![trame hmi](https://src.ks-infinite.fr/bras/oscillo_trame_hmi_hex.png)
 
 ### Trame d'un bouton <Badge type="info" text="Documentation" />
 ![trame hmi doc](https://src.ks-infinite.fr/bras/hmi_instruction_button_trame.png)
 
-## json
-Lors de l'envoie d'une trame sur le HMI depuis une [Arduino](/composants/arduino), cela se fait par un message qui passe par le port série (chez nous le numéro 3) et reçu par le HMI via le format JSON.
+## JSON
+Lors de l'envoi d'une trame sur le HMI depuis une [Arduino](/composants/arduino), cela se fait par un message qui passe par le port série (chez nous le numéro 3) et est reçu par le HMI via le format JSON.
 
-Le mesage envoyé est composé en 3 partie.
-1. Le début de la trame qui permet d'indiquer sont début au HMI. Il commence toujours par ``ST<``
-2. Le message composé en JSON
-3. La fin de la trame qui permet d'indiquer la fin de cette dernière ``>ET`` 
+Le message envoyé est composé de trois parties :
+1. Le début de la trame qui permet d'indiquer son début au HMI. Il commence toujours par `ST<`.
+2. Le message composé en JSON.
+3. La fin de la trame qui permet d'indiquer la fin de cette dernière `>ET`.
 
 ### Exemple de code
+
 #### Code JSON
-Code JSON qui sera envoyé. Ici le code permet de changer la couleur d'arrière plan d'un widget (un élément) de l'écran.
+Code JSON qui sera envoyé. Ici, le code permet de changer la couleur d'arrière-plan d'un widget (un élément) de l'écran.
 ```JSON:line-numbers=1
 {
     "cmd_code":"set_color",
@@ -45,33 +47,33 @@ Serial3.println("ST<{\"cmd_code\":\"set_color\",\"type\":\"widget\",\"widget\":\
 ```
 
 ### Changement de couleur
-Pour changer les couleurs sur le HMI il suffit d'appliquer la même logique que le code précédent. Néanmoins il y a une règle à respecter. Le code couleur doit être de format ARGB et doit également être en Décimal. Cette décimal doit également être la valeur total du format ARGB qui est-elle en Hexadécimal.
+Pour changer les couleurs sur le HMI, il suffit d'appliquer la même logique que le code précédent. Néanmoins, il y a une règle à respecter : le code couleur doit être au format ARGB et doit également être en décimal. Ce décimal doit être la valeur totale du format ARGB qui est en hexadé
 
 #### Exemple :
-Prenons un exemple ou nous souhaitons convertir une couleur bleu précise. ici : #0046a1ff => rgba(0, 70, 161, 1). Peut importe le format de la couleur, convertisser la en Hexadécimal pour plus de facilité.
+Prenons un exemple où nous souhaitons convertir une couleur bleue précise, ici : #0046a1ff => rgba(0, 70, 161, 1). Peu importe le format de la couleur, convertissez-la en hexadécimal pour plus de facilité.
 
-- Tout d'abords récupérer la couleur en Hex, ici ``0046a1ff`` (ou #0046a1 sans la tranparence).
+- Tout d'abord, récupérez la couleur en hex, ici ``0046a1ff`` (ou #0046a1 sans la transparence).
 ::: tip Rappel
-Nous savons que dans la valeur #0046a1, Que ``0x00`` est la valeur Rouge, ``0x46`` la valeur vert, ``0xa1`` en bleu.
+Nous savons que dans la valeur #0046a1, 0x00 est la valeur rouge, 0x46 la valeur verte, 0xa1 la valeur bleue.
 :::
-- Il suffit de rajouter le niveau de transparence devant le nombre. donc ``FF0046a1``. ``FF`` étant la valeur maximum qui nous permet de ne pas avoir de transparence. (``0x00`` étant le niveau invisible).
-- Une fois votre valeur récupéré, il suffit de convertir ***toute la valeur*** en ARGB. Ce qui vas nous donnez ``4278208161``.
-- Il suffit d'intégrer votre couleur ARGB dans la chaine de massage.
+- Il suffit de rajouter le niveau de transparence devant le nombre, donc ``FF0046a1``. FF étant la valeur maximum qui nous permet de ne pas avoir de transparence (0x00 étant le niveau invisible).
+- Une fois votre valeur récupérée, il suffit de convertir toute la valeur en ARGB. Ce qui va nous donner ``4278208161``.
+- Il suffit d'intégrer votre couleur ARGB dans la chaîne de message.
 
 :::warning attention
-Une fois la trame récupéré par le HMI la valeur est convertie à nouveau en Hex.
+Une fois la trame récupérée par le HMI, la valeur est convertie à nouveau en hexadécimal.
 :::
 
 ### Activer ou Désactiver
-Vous pouvez également activer ou désactiver des éléments pour intéragir avec. Pour cela, quelque valeur change. Comme celle du ``cmd_code`` ainsi que la dernière information. Ou la valeur color est complètement remplacé par ``enable`` suivis de son état. et la suppression de la valeur ``color_object``.
+Vous pouvez également activer ou désactiver des éléments pour interagir avec eux. Pour cela, quelques valeurs changent. Par exemple, le ``cmd_code`` ainsi que la dernière information. La valeur color est complètement remplacée par ``enable`` suivi de son état, et la valeur ``color_object`` est supprimée.
 
-| true  | Autorise l'intéraction     |
-|-------|----------------------------|
-| false | Autorise pas l'intéraction |
+| true  | Autorise l'intéraction       |
+|-------|------------------------------|
+| false | N'autorise pas l'interaction |
 
 
 ### Code JSON
-Ici on indique l'état du button1 soit désactivé donc impossible d'intéragir avec.
+Ici, on indique l'état du button1, désactivé, donc impossible d'interagir avec.
 ```JSON:line-numbers=1
 {
     "cmd_code":"set_enable",

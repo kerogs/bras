@@ -52,6 +52,7 @@ Les versions antérieur à la ``1.1.8-alpha`` ne sont pas disponible car inutili
 
 ## Autre code
 - [bras-simtram](/ADR/bras-simtram)
+- [bras sans moteur](/ADR/1.2.5-sm.md) <Badge type="tip" text="1.2.5" />
 
 ## Template
 - [template](/ADR/template)

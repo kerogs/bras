@@ -9,10 +9,17 @@ La version de la documentation ***n'est pas*** la même que celle du projet.
 
 ## Version 2.8-beta
 ### Ajout
-- Ajout du code 1.2.4, 1.2.5
+- Ajout du code 1.2.4, 1.2.5, 1.2.5-sm
 - Ajout d'image d'illustration
 - Ajout d'une image de la maquette terminé
 - Ajout d'une page expliquant les trames
+- Ajout du logo de Motorola sur la page [4069](/composants/4069.md)
+- Ajout du code ``/public/code/bras-sans-moteur``.
+
+### Modification
+- Réecriture complète de toutes les pages
+- Modification des anciens schéma par les nouveaux
+- Mise à jours du code du ``/public/code/bras.ino``
 
 ### Suprression
 - Suppression de la page "Variable". Toujours accèssible à l'url "/docs/variable" mais n'est plus indexé
