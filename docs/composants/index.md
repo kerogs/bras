@@ -12,7 +12,7 @@ Bienvenue sur la liste des composants utilisé.
 - [dri0023](/composants/dri0023)
 
 ## Schéma de cablage <Badge type="info" text="Proteus" />
-Schéma de cablage entre l'écran, HMI, 4069 et csn-a2 
+Schéma de cablage entre l'écran, HMI, 4069 et csn-a2 (sans ASMI1-19)
 ![Rendu image](https://src.ks-infinite.fr/bras/preview2.png)
 
 

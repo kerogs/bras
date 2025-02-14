@@ -1,5 +1,5 @@
 # tamponReset() <Badge type="tip" text="^1.1.30-alpha" />
-Permet de vider le [tampon](/docs/variable#tampon) et [tamponPos](/docs/variable#tamponpos). Cette fonction à été conçu pour être utilisé à la fin d'une trame.
+Permet de vider le [tampon](/docs/variable#tampon) et [tamponPos](/docs/variable#tamponpos). Cette fonction a été conçu pour être utilisé à la fin d'une trame.
 
 ## Créateur
 Lucas W.

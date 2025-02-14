@@ -3,7 +3,7 @@
 Communication entre l'afficheur STONE HMI, Arduino MEGA et action des casiers du B.R.A.S.
 
 ::: warning
-Le branchement pour les versions `>1.1.40` est disponible sur la [page suivante](/docs/old-installation).
+Le branchement pour les versions `<1.1.40` est disponible sur la [page "old-installation"](/docs/old-installation).
 :::
 
 ### Équipement
@@ -31,7 +31,7 @@ Il est important de noter que les commandes des moteurs sont toutes branchées s
 - Bouton ouverture/fermeture
 
 ### DRI0023
-- Moteur
+- Shield moteur
 
 ## Résultat du montage
 ![Résultat du montage](/temp/resultat_montage.jpg)

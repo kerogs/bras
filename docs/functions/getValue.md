@@ -9,7 +9,7 @@ Lucas W.
 | I/O | Type | Valeur | Description                                     |
 |-----|------|--------|-------------------------------------------------|
 | IN  | char | array  | ici on rentre le tampon afin de le scanner      |
-| IN  | int  | length | la longueur du tompon (utile pour la création)  |
+| IN  | int  | length | la longueur du tampon (utile pour la création)  |
 | OUT | int  | N/A    | valeur qui retourne la longueur du mot de passe |
 
 

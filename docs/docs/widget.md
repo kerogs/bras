@@ -2,60 +2,60 @@
 Liste du nom de tous les widgets.
 
 ## Accueil
-|Elément|Widget|Etat|Description|
-|-------|------|----|-----------|
-|Page d'accueil|home_page|Activé|page d'accueil affiché au démarage|
-|Casier(N)|Casier1-6|Activé|Numéro des casiers (N) = numéro du casier.|
-|Bouton Admin|MA|Activé|Bouton pour se connecter en mode admin (afficher avec le text "B.R.A.S.")|
-|Carré rouge d'indication|Carrerouge|Activé|Carré rouge allant avec le text "occupé"|
-|Text "Occupé"|Occupe|Activé|Text à côté de l'indicateur|
-|Carré vert d'indication|Carrevert|Activé|Carré vert allant avec le text "disponible"|
-|Text "Disponible"|Disponible|Activé|Text à côté de l'indicateur|
+| Élément | Widget | État | Description |
+|---------|--------|------|-------------|
+| Page d'accueil | home_page | Activé | Page d'accueil affichée au démarrage. |
+| Casier (N) | Casier1-6 | Activé | Numéro des casiers (N) correspondant au numéro du casier. |
+| Bouton Admin | MA | Activé | Bouton permettant de se connecter en mode admin (affiché avec le texte "B.R.A.S."). |
+| Carré rouge d'indication | Carrerouge | Activé | Carré rouge associé au texte "Occupé". |
+| Texte "Occupé" | Occupe | Activé | Texte affiché à côté de l'indicateur. |
+| Carré vert d'indication | Carrevert | Activé | Carré vert associé au texte "Disponible". |
+| Texte "Disponible" | Disponible | Activé | Texte affiché à côté de l'indicateur. |
 
 ## Page admin
-|Elément|Widget|Etat|Description|
-|-------|------|----|-----------|
-|Page admin|admin|Activé|Page pour l'administrateur|
-|Admin(N)|Admin1-6|Activé|Numéro des casiers (N) = numéro du casier|
-|Bouton retour par défaut|MC|Activé|Bouton pour retourner en mode par défaut (afficher avec le text "B.R.A.S.")|
-|Text "admin"|admin|Activé|Affiche un text pour indiquer que l'afficheur est en mode admin|
+| Élément | Widget | État | Description |
+|---------|--------|------|-------------|
+| Page admin | admin | Activé | Page réservée à l'administrateur. |
+| Admin (N) | Admin1-6 | Activé | Numéro des casiers (N) correspondant au numéro du casier. |
+| Bouton retour par défaut | MC | Activé | Bouton permettant de revenir au mode par défaut (affiché avec le texte "B.R.A.S."). |
+| Texte "admin" | admin | Activé | Texte indiquant que l'affichage est en mode administrateur. |
 
 ## Popup casier
-|Elément|Widget|Etat|Description|
-|-------|------|----|-----------|
-|Popup|popup_C|Activé|Popup qui sera affiché en mode normal pour entrer un mdp|
-|Text d'aide 1|Inserer1|Activé/Désactivé|Text d'aide ("1. Insérer le smartphone dans le casier")|
-|Text d'aide 2|Inserer2|Activé/Désactivé|Text d'aide ("2. Enter un code secret")
-|Text d'aide 3|Inserer3|Activé/Désactivé|Text d'aide ("3. Imprimer code secret en papier ?")|
-|Text d'aide Chiffre|Inserer2a|Activé|Petit text pour indiquer le nombre de chiffre minimum pour le mdp (4 chiffres)|
-|Entrée MDP|PC|Activé|Input pour rentré le mot de passe 4 chiffre obligatoire|
-|Button d'impression|IC|Activé/Désactivé|Bouton pour imprimer le mot de passe|
-|Fermer popup|FermerPopupC|Activé|Bouton pour fermer la popup.|
-|Confirmer|CC|Désactivé|Pour confirmer le mdp (s'active uniquement après l'envoie de 4 chiffres dans l'entrée du mdp)
+| Élément | Widget | État | Description |
+|---------|--------|------|-------------|
+| Popup | popup_C | Activé | Popup affichée en mode normal pour entrer un mot de passe. |
+| Texte d'aide 1 | Inserer1 | Activé/Désactivé | Texte d'aide ("1. Insérer le smartphone dans le casier"). |
+| Texte d'aide 2 | Inserer2 | Activé/Désactivé | Texte d'aide ("2. Entrer un code secret"). |
+| Texte d'aide 3 | Inserer3 | Activé/Désactivé | Texte d'aide ("3. Imprimer le code secret sur papier ?"). |
+| Texte d'aide - Chiffre | Inserer2a | Activé | Petit texte indiquant le nombre minimal de chiffres requis pour le mot de passe (4 chiffres). |
+| Entrée MDP | PC | Activé | Champ de saisie pour entrer un mot de passe de 4 chiffres obligatoire. |
+| Bouton d'impression | IC | Activé/Désactivé | Bouton permettant d'imprimer le mot de passe. |
+| Fermer popup | FermerPopupC | Activé | Bouton permettant de fermer la popup. |
+| Confirmer | CC | Désactivé | Bouton permettant de confirmer le mot de passe (activé uniquement après la saisie de 4 chiffres). |
 
 ## Popup admin
-|Elément|Widget|Etat|Description|
-|-------|------|----|-----------|
-|Popup|popup_admin|Activé|Popup qui sera affiché pour se connecter en tant que admin|
-|Text indicateur|Inserer|Activé|Text d'aide ("Insérer code secret : ")|
-|Entée MDP|AP|Activé|Bouton pour entrée le mdp administrateur|
-|Fermer popup|FA|Activé|Bouton pour fermer la popup|
-|Confirmer Admin|CA|Désactivé|Bouton pour valider la connexion en tant que administrateur|
+| Élément | Widget | État | Description |
+|---------|--------|------|-------------|
+| Popup | popup_admin | Activé | Popup affichée pour la connexion en tant qu'administrateur. |
+| Texte indicateur | Inserer | Activé | Texte d'aide ("Insérer code secret : "). |
+| Entrée MDP | AP | Activé | Champ de saisie pour entrer le mot de passe administrateur. |
+| Fermer popup | FA | Activé | Bouton permettant de fermer la popup. |
+| Confirmer Admin | CA | Désactivé | Bouton permettant de valider la connexion en tant qu'administrateur. |
 
-## Popup caiser Admin
-|Elément|Widget|Etat|Description|
-|-------|------|----|-----------|
-|Popup|popup_A|Activé|Popup admin pour valider l'ouverture d'un casier|
-|Text indicateur|InsererA|Activé|Text indicateur ("Ouvrir casier ?")|
-|Bouton fermer popup|FermerPopupA|Activé|Bouton pour fermer la popup|
-|Bouton confirmer|DA|Activé|Bouton pour ouvrir le casier|
+## Popup casier Admin
+| Élément | Widget | État | Description |
+|---------|--------|------|-------------|
+| Popup | popup_A | Activé | Popup admin permettant de valider l'ouverture d'un casier. |
+| Texte indicateur | InsererA | Activé | Texte indicateur ("Ouvrir casier ?"). |
+| Bouton fermer popup | FermerPopupA | Activé | Bouton permettant de fermer la popup. |
+| Bouton confirmer | DA | Activé | Bouton permettant d'ouvrir le casier. |
 
 ## Clavier
-|Elément|Widget|Description|
-|-------|------|-----------|
-|Clavier|kb_phone|Clavier pour entrée le MDP|
-|Affichage|panel|Comporte les chiffres et bouton de retour|
-|Numéro 0-9|0-9|Bouton clavier pour les numéro|
-|Bouton vide|zero/zeroo|Bouton vide qui donneront 0 au clique|
-|Done|action|Fermer la popup (garde mdp)|
-|Retour|candidates|Bouton pour suppirmer un chiffres|
+| Élément | Widget | Description |
+|---------|--------|-------------|
+| Clavier | kb_phone | Clavier permettant de saisir le mot de passe. |
+| Affichage | panel | Contient les chiffres et le bouton de retour. |
+| Numéros 0-9 | 0-9 | Boutons du clavier numérique. |
+| Bouton vide | zero/zeroo | Bouton vide qui attribue la valeur 0 lors d'un clic. |
+| Done | action | Ferme la popup tout en conservant le mot de passe. |
+| Retour | candidates | Bouton permettant de supprimer un chiffre. |
