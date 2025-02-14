@@ -7,6 +7,14 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 2.9-rc2
+### Ajout
+- Ajout message avertissement pour les risques de court-circuit si mal manipulé.
+- Ajout de certaine information complémentaire
+### Modification
+- Correction des fautes d'ortographes
+- Modification de certain logo
+
 ## Version 2.8-rc1
 ### Ajout
 - Ajout du code 1.2.4, 1.2.5, 1.2.5-sm
