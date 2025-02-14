@@ -134,7 +134,7 @@ cd .\docs\; npm run docs:build
 ## License
 Licence Apache 2.0 (voir le fichier LICENSE)
 
-## Autheurs
+## Auteurs
 - [Kerogs](https://github.com/kerogs) [Lucas W.]
 - Florian V.
 - Jessy K.
