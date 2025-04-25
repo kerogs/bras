@@ -1,5 +1,5 @@
 <div align="center">
-<img alt="banner" src="https://src.ks-infinite.fr/bras/bras.png"width="80">
+<img alt="banner" src="https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/bras.png"width="80">
 <h3 align="center">B.R.A.S</h3>
 <em>Projet BRAS - Code et Documentation.</em>
 

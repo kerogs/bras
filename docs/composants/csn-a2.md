@@ -22,9 +22,9 @@ Rendez-vous à la page [des fonctions](/functions/imprimante)
 
 ## Illustration
 ### Illustration depuis le schéma
-![Schéma](https://src.ks-infinite.fr/bras/Capture%20d'%C3%A9cran%202024-05-11%20162033.png)
+![Schéma](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/Capture%20d'%C3%A9cran%202024-05-11%20162033.png)
 ### Illustration depuis la datasheet
-![Imprimante image](https://src.ks-infinite.fr/bras/Capture%20d'%C3%A9cran%202024-05-11%20161728.png)
+![Imprimante image](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/Capture%20d'%C3%A9cran%202024-05-11%20161728.png)
 
 ## Lien utile
-- [DATASHEET](https://src.ks-infinite.fr/bras/stone-hmi-Instruction-Sets-V2.5RC-20240105-datasheet.pdf)
+- [DATASHEET](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/stone-hmi-Instruction-Sets-V2.5RC-20240105-datasheet.pdf)

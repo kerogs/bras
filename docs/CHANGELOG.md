@@ -13,6 +13,7 @@ La version de la documentation ***n'est pas*** la même que celle du projet.
 
 ### Modification
 - Les assets contenu affiché ou url utilisé pointant vers https://src.ks-infinite.fr/bras/ pointeront vers le repo github maintenant
+- Modification dans les sections d'hébergement et composants.
 
 ## Version 2.9-rc2
 ### Ajout

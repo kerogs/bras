@@ -19,4 +19,4 @@ L'idée est née d’un besoin exprimé par le centre social du quartier du Wies
 
 ---
 
-![B.R.A.S Logo](https://src.ks-infinite.fr/bras/bras.png){style="display: block; margin: 0 auto"}
+![B.R.A.S Logo](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/bras.png){style="display: block; margin: 0 auto"}

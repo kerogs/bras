@@ -13,6 +13,6 @@ Bienvenue sur la liste des composants utilisé.
 
 ## Schéma de cablage <Badge type="info" text="Proteus" />
 Schéma de cablage entre l'écran, HMI, 4069 et csn-a2 (sans ASMI1-19)
-![Rendu image](https://src.ks-infinite.fr/bras/preview2.png)
+![Rendu image](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/preview2.png)
 
 

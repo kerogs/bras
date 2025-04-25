@@ -15,10 +15,10 @@ Le protocole de communication entre le HMI et l'[Arduino](/composants/arduino) n
 
 ### Trame envoyée vers l'Arduino
 Les valeurs situées après les octets `0xE7 A0` ne sont pas à prendre en compte et servent uniquement à vérifier que le message ne comporte aucune erreur.
-![trame hmi](https://src.ks-infinite.fr/bras/oscillo_trame_hmi_hex.png)
+![trame hmi](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/oscillo_trame_hmi_hex.png)
 
 ### Trame d'un bouton <Badge type="info" text="Documentation" />
-![trame hmi doc](https://src.ks-infinite.fr/bras/hmi_instruction_button_trame.png)
+![trame hmi doc](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/hmi_instruction_button_trame.png)
 
 ## JSON
 Lors de l'envoi d'une trame sur le HMI depuis une [Arduino](/composants/arduino), cela se fait par un message qui passe par le port série (chez nous le numéro 3) et est reçu par le HMI via le format JSON.
@@ -90,4 +90,4 @@ Serial3.println("ST<{\"cmd_code\":\"set_enable\",\"type\":\"widget\",\"widget\":
 
 
 ## Lien utile
-- [DATASHEET](https://src.ks-infinite.fr/bras/stone-hmi-Instruction-Sets-V2.5RC-20240105-datasheet.pdf)
+- [DATASHEET](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/stone-hmi-Instruction-Sets-V2.5RC-20240105-datasheet.pdf)

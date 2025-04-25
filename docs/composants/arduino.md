@@ -45,12 +45,12 @@ Lors du démarrage d'une arduino ou d'un reset il y'a un léger délai ou l'ardu
     + 15 PWM Output
 
 ## Image
-![Arduion image](https://src.ks-infinite.fr/bras/arduino-mega.png)
+![Arduion image](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/arduino-mega.png)
 
 ## Oscilloscope
 
 ### Trame (RX)
-![Trame RX arduino](https://src.ks-infinite.fr/bras/oscillo_trame_arduino_hex.png)
+![Trame RX arduino](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/oscillo_trame_arduino_hex.png)
 
 ### Trame HMI + LED arduino
 Led qui s'allume au passage d'une trame envoyé par le HMI
@@ -82,7 +82,7 @@ void serialEvent3() {
 ```
 :::
 
-![trame HMI + led arduino](https://src.ks-infinite.fr/bras/oscillo_trame_led.png)
+![trame HMI + led arduino](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/oscillo_trame_led.png)
 
 ## Lien utile
-- [DATASHEET](https://src.ks-infinite.fr/bras/Arduino-mega-A000067-datasheet.pdf)
+- [DATASHEET](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/Arduino-mega-A000067-datasheet.pdf)

@@ -5,9 +5,9 @@ export default defineConfig({
   title: "B.R.A.S",
   description: "Documentation pour le B.R.A.S",
   base: '/bras/',
-  head: [['link', { rel: 'icon', href: 'https://src.ks-infinite.fr/bras/bras.png' }]],
+  head: [['link', { rel: 'icon', href: 'https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/bras.png' }]],
   themeConfig: {
-    logo: 'https://src.ks-infinite.fr/bras/bras.png',
+    logo: 'https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/bras.png',
 
     footer: {
       message: 'Documentation/code du Projet B.R.A.S présent sur ce site sous license CC BY 4.0. (pour en savoir plus rdv dans la section LICENSE)',

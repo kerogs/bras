@@ -23,4 +23,4 @@ Le ASMI1 fonctionne sur une tension VIN de ``12V``. Il possède un régulateur d
 |Moteur|J3 CASIER (1-8)|✅|
 |[DRI0023](/composants/dri0023)|Shield|✅|
 
-![Rendu](https://src.ks-infinite.fr/bras/preview1.png)
+![Rendu](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/preview1.png)

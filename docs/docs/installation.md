@@ -21,7 +21,7 @@ Liste des équipements nécessaires pour le bon fonctionnement :
 - L'imprimante est située en bas à droite.
 - Le moteur est situé à gauche.
 :::
-![branchement shield](https://src.ks-infinite.fr/bras/preview1.png)
+![branchement shield](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/preview1.png)
 
 ## Moteur
 Il est important de noter que les commandes des moteurs sont toutes branchées sur le shield [ASMI1-19](/composants/ASMI1-19) et le [DRI0023](/composants/dri0023).

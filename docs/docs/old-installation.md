@@ -57,7 +57,7 @@ La valeur de la résistance pour la LED dépant du modèle utiliser. Mais il est
 
 ### Rendu visuel 
 Branchement de l'[arduino mega](/composants/arduino.md) avec le [HMI](/composants/hmi.md) avec entre le [4069](/composants/4069.md) 
-![Rendu image](https://src.ks-infinite.fr/bras/Cablage_photo.jpg)
+![Rendu image](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/Cablage_photo.jpg)
 
 ### Schéma de cablage complet
 Schéma de connexion entre tous les composants. (Représentation global du Shield ASMI1-19)
@@ -65,4 +65,4 @@ Schéma de connexion entre tous les composants. (Représentation global du Shiel
 
 ### Schéma de cablage <Badge type="info" text="easyEDA" />
 Schéma de cablager entre le [STONE HMI](/composants/hmi), [arduino](/composants/arduino),  [4069](/composants/4069), [Imprimante](/composants/csn-a2) 
-![Rendu image](https://src.ks-infinite.fr/bras/Schematic_bras_2024-05-11.png)
+![Rendu image](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/Schematic_bras_2024-05-11.png)
