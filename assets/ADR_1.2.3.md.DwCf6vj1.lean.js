@@ -1,0 +1,1 @@
+import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.CRhGRqNS.js";const y=JSON.parse('{"title":"1.2.3","description":"","frontmatter":{},"headers":[],"relativePath":"ADR/1.2.3.md","filePath":"ADR/1.2.3.md"}'),l={name:"ADR/1.2.3.md"},p=n("",5),h=[p];function k(t,e,r,E,d,F){return a(),i("div",null,h)}const c=s(l,[["render",k]]);export{y as __pageData,c as default};
