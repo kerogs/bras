@@ -7,6 +7,15 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 3.2-rc4
+### Ajout
+- Ajout de quelque images pour illustrer la documentation
+- Indication du protocole de communication de l'arduino
+- Indication du protocole de communication du HMI
+
+### Modification
+- Meilleur précision sur le role du 4069
+
 ## Version 3.1-rc3
 ### Ajout
 - Tous les contenu utilisé on été installé sur le repository

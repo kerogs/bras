@@ -35,3 +35,12 @@ Il est important de noter que les commandes des moteurs sont toutes branchées s
 
 ## Résultat du montage
 ![Résultat du montage](/temp/resultat_montage.jpg)
+
+![Résultat du montage](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/rf2.jpg)
+
+::: details Première visualisation
+Si vous le souhaitez, vous pouvez voir à quoi ressembler le schéma réaliser. C'est ce qui a était imaginer vers le tout début du projet. Ne le prenez donc pas comme acquis mais comme annecdote
+
+![Résultat du montage](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/schema_base.jpg)
+
+:::

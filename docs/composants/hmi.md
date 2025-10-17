@@ -11,6 +11,11 @@ Pour établir la communication entre le HMI et l'Arduino, on utilise une [porte 
 Le protocole de communication entre le HMI et l'[Arduino](/composants/arduino) ne sont pas les mêmes !
 :::
 
+## Communication
+La communication du HMI se fait en liaison série ainsi qu'avec le protocole UART RS-232.
+
+Ce qui est différent du HMI. Pour en savoir plus, aller voir la page du [HMI](/composants/hmi) et la page du [4069](/composants/4069)
+
 ## Oscilloscope
 
 ### Trame envoyée vers l'Arduino

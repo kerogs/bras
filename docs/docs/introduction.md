@@ -25,7 +25,7 @@ La documentation a été rédigée par **Lucas W.**.
 Les codes utilisés et présents sur la carte Arduino ont été développés par **Jessy K.**, **Florian V.**, et **Lucas W.**.
 
 ::: info
-Les images utilisé dans la version ``^3.1`` de la documentation sont désormais directement hébergé dans le repository github (voir : https://github.com/kerogs)
+Les images utilisé dans la version ``^3.1`` de la documentation sont désormais directement hébergé dans le repository github (voir : https://github.com/kerogs/bras)
 
 Pour les versions inférieur de la documentation, vous risquez de ne plus voir les images.
 :::

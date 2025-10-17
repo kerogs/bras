@@ -44,6 +44,11 @@ Lors du démarrage d'une arduino ou d'un reset il y'a un léger délai ou l'ardu
     + 16 Analog
     + 15 PWM Output
 
+## Communication
+La communication des arduinos se fait en liaison série ainsi qu'avec le protocole UART TTL.
+
+Ce qui est différent du HMI. Pour en savoir plus, aller voir la page du [HMI](/composants/hmi) et la page du [4069](/composants/4069)
+
 ## Image
 ![Arduion image](https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/arduino-mega.png)
 
