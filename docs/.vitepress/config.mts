@@ -58,6 +58,12 @@ export default defineConfig({
         ]
       },
       {
+        text: "Release",
+        items: [
+          { text: 'ASMI1-19', link: '/release/asmi1-19'},
+        ]
+      },
+      {
         text: 'Mention',
         items: [
           { text: 'License', link: '/license' },

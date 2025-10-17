@@ -7,6 +7,10 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 3.3-rc5
+### Ajout
+- Ajout release du ASMI1-19
+
 ## Version 3.2-rc4
 ### Ajout
 - Ajout de quelque images pour illustrer la documentation
