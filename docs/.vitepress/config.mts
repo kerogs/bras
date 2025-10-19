@@ -10,7 +10,7 @@ export default defineConfig({
     logo: 'https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/bras.png',
 
     footer: {
-      message: 'Documentation/code du Projet B.R.A.S présent sur ce site sous license CC BY 4.0. (pour en savoir plus rdv dans la section LICENSE)',
+      message: 'Documentation/code du Projet B.R.A.S présent sur ce site sontsous license. (pour en savoir plus rdv dans la section LICENSE)',
       copyright: 'Copyright © 2023-present kerogs'
     },
 
