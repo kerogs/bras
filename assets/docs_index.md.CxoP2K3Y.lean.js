@@ -1,1 +1,0 @@
-import{_ as e,c as t,o,a4 as a}from"./chunks/framework.CRhGRqNS.js";const g=JSON.parse('{"title":"Documentation","description":"","frontmatter":{},"headers":[],"relativePath":"docs/index.md","filePath":"docs/index.md"}'),r={name:"docs/index.md"},n=a("",10),s=[n];function i(d,c,u,l,h,p){return o(),t("div",null,s)}const b=e(r,[["render",i]]);export{g as __pageData,b as default};
