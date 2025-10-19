@@ -20,9 +20,9 @@ Si vous connectez l'**Arduino** ou tout autre élément à un ordinateur ou à u
 
 ## Auteurs
 
-La documentation a été rédigée par **Lucas W.**.
+La documentation a été rédigée par **kerogs**.
 
-Les codes utilisés et présents sur la carte Arduino ont été développés par **Jessy K.**, **Florian V.**, et **Lucas W.**.
+Les codes utilisés et présents sur la carte Arduino ont été développés par **Nepthys**, **CmoiFlo**, et **kerogs**.
 
 ::: info
 Les images utilisé dans la version ``^3.1`` de la documentation sont désormais directement hébergé dans le repository github (voir : https://github.com/kerogs/bras)
@@ -33,7 +33,6 @@ Pour les versions inférieur de la documentation, vous risquez de ne plus voir l
 
 ## Liens Utiles
 
-- [Lycée Condorcet](https://lyc-condorcet.monbureaunumerique.fr/)
 - [Arduino](https://www.arduino.cc/)
 - [STONE HMI](https://www.stoneitech.com/)
 - [Images/Datasheets](https://www.src.ks-infinite.fr/bras/)

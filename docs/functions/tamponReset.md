@@ -2,7 +2,7 @@
 Permet de vider le [tampon](/docs/variable#tampon) et [tamponPos](/docs/variable#tamponpos). Cette fonction a été conçu pour être utilisé à la fin d'une trame.
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.30-alpha
 ## Paramètres

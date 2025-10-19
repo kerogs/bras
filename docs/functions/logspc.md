@@ -2,7 +2,7 @@
 Permet de voir ce qu'il se passe en temps réel depuis un moniteur (Ex : PC)
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.24-alpha
 ## Paramètres

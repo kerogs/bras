@@ -136,8 +136,8 @@ cd .\docs\; npm run docs:build
 Licence Apache 2.0 (voir le fichier LICENSE)
 
 ## Auteurs
-- [Lucas W.](https://github.com/kerogs)
-- [Florian V.](https://github.com/BruggaChamp)
-- [Jessy K.](https://github.com/nepthys01)
+- [Kerogs](https://github.com/kerogs)
+- [CmoiFlo](https://github.com/BruggaChamp)
+- [Nepthys](https://github.com/nepthys01)
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)

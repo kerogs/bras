@@ -3,7 +3,7 @@
 searchArray() est une fonction ***nécessaire*** au fonctionne de la communication entre l'[aduino](/composants/arduino) et le [HMI](/composants/hmi)
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.28-alpha
 ## Paramètres

@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "B.R.A.S"
   text: "Documentation pour le B.R.A.S"
-  tagline: Lycée Condorcet Schoeneck - PROJET BTS SNEC
+  tagline:   PROJET BTS SNEC
   image:
     src: https://raw.githubusercontent.com/kerogs/bras/refs/heads/main/assets/bras.png
     alt: VitePress

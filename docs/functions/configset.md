@@ -9,7 +9,7 @@ Un délai de 200ms est indiqué à la fin de la fonction afin de laisser le temp
 Afin d'indiquer sur le port série de base que l'arduino est entrain de charger des points seront envoyé et un message ```Fin``` y sera envoyé.
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.24-alpha
 ## Paramètres

@@ -2,7 +2,7 @@
 Petite fonction pour compter le nombre de numéro
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.31-alpha
 ## Paramètres

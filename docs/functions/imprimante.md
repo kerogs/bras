@@ -2,7 +2,7 @@
 permet d'imprimer le casier et le code du casier correspondant.
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.36-beta
 ## Paramètres
@@ -21,7 +21,7 @@ void imprimante(int codeCasierNumber, int codeCasier) {
   printer.justify('C');
   printer.setSize('M');
   printer.println("-------------------------");
-  printer.println(F("KEROGS INFINITE - BRAS"));
+  printer.println(F("Kerogs - BRAS"));
   printer.println("-------------------------");
   printer.print(F("Casier Numero "));
   printer.print(codeCasierNumber);

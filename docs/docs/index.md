@@ -13,9 +13,9 @@ L'idée est née d’un besoin exprimé par le centre social du quartier du Wies
 
 | Étudiant    | Numéro | Description                                                                                                                                                                  |
 |------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Lucas W.**](https://github.com/kerogs)    | 1      | Affichage de l’état des casiers (libres ou occupés), sélection d’un casier libre pour y déposer un téléphone. Création d’un code secret obligatoire, avec possibilité d'impression du code.               |
-| **Florian V.**  | 2      | Sélection d’un casier "loué" pour récupérer son téléphone après saisie du code secret. Un mode "administrateur" permet le déverrouillage manuel des casiers.                                                 |
-| **Jessy K.**    | 4      | Commande du verrouillage et du déverrouillage des casiers via un moteur DC actionnant un rideau ou un clapet. Signalisation lumineuse indiquant l’état du casier (libre ou occupé).                       |
+| [**kerogs**](https://github.com/kerogs)    | 1      | Affichage de l’état des casiers (libres ou occupés), sélection d’un casier libre pour y déposer un téléphone. Création d’un code secret obligatoire, avec possibilité d'impression du code.               |
+| **CmoiFlo**  | 2      | Sélection d’un casier "loué" pour récupérer son téléphone après saisie du code secret. Un mode "administrateur" permet le déverrouillage manuel des casiers.                                                 |
+| **Nepthys**    | 4      | Commande du verrouillage et du déverrouillage des casiers via un moteur DC actionnant un rideau ou un clapet. Signalisation lumineuse indiquant l’état du casier (libre ou occupé).                       |
 
 ---
 

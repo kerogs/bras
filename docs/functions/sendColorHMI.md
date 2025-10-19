@@ -6,7 +6,7 @@ Pour en savoir plus sur l'envoie d'un code couleur sur le HMI [cliquez-ici](/com
 :::
 
 ## Créateur
-Lucas W.
+kerogs
 ## Dernière version mise à jour
 1.1.31-alpha
 ## Paramètres
