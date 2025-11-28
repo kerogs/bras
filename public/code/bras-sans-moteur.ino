@@ -2,7 +2,7 @@
 /**
    * @file bras-sans-moteur.cpp
    * @brief Communication entre l'afficheur STONE HMI, Arduino MEGA et action des casiers du B.R.A.S
-   * documentation : https://docs.ks-infinite.fr/bras/
+   * documentation : https://kerogs.github.io/bras/
    * github : https://github.com/kerogs/bras/
    * @author kerogs
    * @author CmoiFlo

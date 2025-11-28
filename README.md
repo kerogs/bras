@@ -49,7 +49,7 @@ git clone https://github.com/kerogs/bras.git
 
 ## Accès à la documentation
 Pour simplement ouvrir et consulter la documentation :
-1. Rendez vous sur le site de la documentation [ks-infinite.fr](https://bras.ks-infinite.fr/)
+1. Rendez vous sur le site de la documentation [kerogs.github.io/bras/](kerogs.github.io/bras/)
    - Ou alors Passer à l'étape ***Modification et lancement de la documentation*** pour la version self hosted
 
 ## Modification et lancement de la documentation

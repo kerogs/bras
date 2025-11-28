@@ -7,6 +7,15 @@ Dans cette section, vous trouverez l'historique des modifications apportées à 
 La version de la documentation ***n'est pas*** la même que celle du projet.
 :::
 
+## Version 3.6-rc8
+### Ajout
+- Ajout d'un avertissement d'URL obsolète pour les URL écrites dans les historiques de codes (depuis le passage a github pages pour la documentations)
+
+### Modification
+- Correction d'une erreur de version affiché pour le code bras sans moteur
+- Correction d'une erreur d'url dans le readme du projet github qui ramener vers l'ancien URL de la doc
+- Changement des URL de la doc affiché dans les fichiers .ino
+
 ## Version 3.5-rc7
 ### Ajout
 - Ajout information DRI0023

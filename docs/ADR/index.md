@@ -5,6 +5,11 @@ Les ADR (Architecture Decision Records) sont des documents enregistrant les déc
 Il peut manquer certaine version. Certaine n'ont pas été mise car c'est dernières sont considéré comme avec des changements mineur voir disfonctionnel.
 :::
 
+::: details URL et documentation
+Les URL de documentation indiquées dans les commentaires des fichiers fournis dans l’ADR sont désormais invalides. La documentation officielle a été déplacée vers GitHub Pages depuis la version `3.6-rc8` (de la doc), rendant les anciens liens obsolètes.
+:::
+
+
 ## Liste des versions
 
 - [1.2.5](/ADR/1.2.5)
